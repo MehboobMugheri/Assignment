@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d7d1d1;
+        }
+
+        header {
+            background-color: #5a4674;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #624a4a;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .car-details {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mehboob Ali Mugheri</h1>
+    </header>
+
+    <nav>
+        <select id="carDropdown">
+            <option value="" disabled selected>Select a Car Category</option>
+            <option value="toyota">Toyota</option>
+            <option value="mehran">Mehran</option>
+            <option value="bike">Bike</option>
+        </select>
+    </nav>
+
+    <section id="toyota" class="car-details">
+        <h2>Toyota</h2>
+        <p>Rs:50.00000<br>Black <br>Auto</p>
+        <img src="car1.jpg" alt="toyota">
+    </section>
+
+    <section id="mehran" class="car-details">
+        <h2>Mehran</h2>
+        <p>5,00000 <br>white</p>
+        <img src="mehran.jpg" alt="Mehran">
+    </section>
+
+    <section id="bike" class="car-details">
+        <h2>Bike</h2>
+        <p>Description of Sports cars goes here.</p>
+        <img src="bike.jpg" alt="bike">
+    </section>
+
+    <script>
+        document.getElementById('carDropdown').addEventListener('change', function () {
+            var selectedCar = this.value;
+            
+            // Hide all car details sections
+            var carDetails = document.getElementsByClassName('car-details');
+            for (var i = 0; i < carDetails.length; i++) {
+                carDetails[i].style.display = 'none';
+            }
+
+            // Show the selected car details
+            document.getElementById(selectedCar).style.display = 'block';
+        });
+    </script>
+</body>
+</html>
